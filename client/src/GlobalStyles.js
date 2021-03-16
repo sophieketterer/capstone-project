@@ -10,8 +10,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: left;
-  xmargin: 2rem;
-  text-align: ;
+  
+  
 }
 h2 {
   font-weight: 700;
@@ -34,6 +34,8 @@ img {
   width: 6.25rem;
   margin-left: 1.125rem;
   margin-bottom: 0.3rem;
-
+}
+.nav {
+color: #C4D1D9;
 }
 `;

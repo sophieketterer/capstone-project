@@ -50,11 +50,6 @@ const veggies = [
     imageUrl: "/images/Kartoffel.svg",
   },
   {
-    name: "Aubergine",
-    months: [6, 7, 8, 9, 10],
-    imageUrl: "/images/Kartoffel.svg",
-  },
-  {
     name: "Knollensellerie",
     months: [7, 8, 9, 10, 11],
     imageUrl: "/images/Knollensellerie.svg",
@@ -144,9 +139,9 @@ const veggies = [
   {
     name: "Zuckerschote",
     months: [6, 7, 8, 9, 10],
-    imageUrl: "/images/Aubergine.svg",
+    imageUrl: "/images/Zuckerschoten.svg",
   },
-  { name: "Zwiebeln", months: [8, 9, 10], imageUrl: "/images/Aubergine.svg" },
+  { name: "Zwiebeln", months: [8, 9, 10], imageUrl: "/images/Zwiebel.svg" },
 ];
 
 export { veggies };
