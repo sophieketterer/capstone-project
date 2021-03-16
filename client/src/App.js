@@ -1,4 +1,4 @@
-import { veggies } from "./fixtures/Veggie.js";
+import { veggies } from "./fixtures/AllVeggies.js";
 import VeggieCard from "./components/Card.js";
 import styled from "styled-components";
 
@@ -9,11 +9,15 @@ function App() {
   return (
     <div>
       <main>
+        <h2>Mai</h2>
+        <h3>Gemüse</h3>
         <WrappContainer>
           {maiVeggie.map((veggie, index) => (
             <VeggieCard key={index} imageUrl={veggie.imageUrl} />
           ))}
         </WrappContainer>
+        <h3>Salat</h3>
+        <h3>Obst</h3>
       </main>
     </div>
   );
