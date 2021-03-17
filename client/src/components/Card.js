@@ -1,4 +1,4 @@
-export default function VeggieCard({ imageUrl }) {
+export default function PictureCard({ imageUrl }) {
   return (
     <div>
       <img src={imageUrl} />

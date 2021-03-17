@@ -1,4 +1,4 @@
-const fruties = [
+const fruities = [
   {
     name: "Apfel",
     months: [8, 9, 10, 11],
@@ -47,7 +47,7 @@ const fruties = [
   {
     name: "Mirabelle",
     months: [7, 8, 9],
-    imageUrl: "/images/Mirabelle.svg",
+    imageUrl: "/images/Mirabellen.svg",
   },
   {
     name: "Pflaume",
@@ -81,4 +81,4 @@ const fruties = [
   },
 ];
 
-export { fruties };
+export { fruities };
