@@ -30,9 +30,7 @@ function App() {
 
   // Filter Function für Salads
   function filterSalads(month) {
-    const filterSalads = salads.filter((salads) =>
-      salads.months.includes(month)
-    );
+    const filterSalads = salads.filter((salad) => salad.months.includes(month));
     setSaladsToRender(filterSalads);
   }
 
@@ -84,19 +82,31 @@ function App() {
         <h3>Obst</h3>
         <WrapContainer>
           {frutiesToRender.map((fruty, index) => (
-            <PictureCard key={index} imageUrl={fruty.imageUrl} />
+            <PictureCard
+              key={index}
+              imageUrl={fruty.imageUrl}
+              name={fruty.name}
+            />
           ))}
         </WrapContainer>
         <h3>Gemüse</h3>
         <WrapContainer>
           {veggiesToRender.map((veggie, index) => (
-            <PictureCard key={index} imageUrl={veggie.imageUrl} />
+            <PictureCard
+              key={index}
+              imageUrl={veggie.imageUrl}
+              name={veggie.name}
+            />
           ))}
         </WrapContainer>
         <h3>Salat</h3>
         <WrapContainer>
           {saladsToRender.map((salads, index) => (
-            <PictureCard key={index} imageUrl={salads.imageUrl} />
+            <PictureCard
+              key={index}
+              imageUrl={salads.imageUrl}
+              name={salads.name}
+            />
           ))}
         </WrapContainer>
       </main>
