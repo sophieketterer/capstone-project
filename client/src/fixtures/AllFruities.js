@@ -77,7 +77,7 @@ const fruities = [
   {
     name: "Zwetschge",
     months: [7, 8, 9, 10],
-    imageUrl: "/images/Apfel.svg",
+    imageUrl: "/images/Zwetschge.svg",
   },
 ];
 

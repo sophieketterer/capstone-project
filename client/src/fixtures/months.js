@@ -1,4 +1,5 @@
 const months = [
+  { name: "Gesamtes Jahr", number: 0 },
   { name: "Januar", number: 1 },
   { name: "Februar", number: 2 },
   { name: "März", number: 3 },
