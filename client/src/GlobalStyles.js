@@ -8,8 +8,8 @@ export default createGlobalStyle`
 body {
   font-family: Assistant;
   display: flex;
-  flex-direction: column;
-  align-items: left;
+  flex-direction: colomn;
+  margin: 0.5rem;
   
   
 }
@@ -19,6 +19,7 @@ h2 {
   font-size: 3rem;
   margin-top: 3.3rem;
   margin-bottom: 2rem;
+  padding-left: 1.4rem;
   text-align: center;
 }
 h3 {

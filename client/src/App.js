@@ -17,7 +17,7 @@ function App() {
   const [veggiesToRender, setVeggiesToRender] = useState(veggies);
   const [fruitiesToRender, setFruitiesToRender] = useState(fruities);
   const [saladsToRender, setSaladsToRender] = useState(salads);
-  const [month, setMonth] = useState("Gesamtes Jahr");
+  const [month, setMonth] = useState("Alle");
 
   // Filter Function für Veggies
   function filterVeggies(month) {
@@ -50,7 +50,7 @@ function App() {
     setVeggiesToRender(veggies);
     setFruitiesToRender(fruities);
     setSaladsToRender(salads);
-    setMonth("Gesamtes Jahr");
+    setMonth("Alle");
   }
 
   function filterAll(month) {
@@ -62,7 +62,11 @@ function App() {
   return (
     <div>
       <main>
-        <h2>{month}</h2>
+        <WrapHeader>
+          <IconLeftRight src="/images/Pfeil-left.svg"></IconLeftRight>
+          <h2>{month}</h2>
+          <IconLeftRight src="/images/Pfeil-right.svg"></IconLeftRight>
+        </WrapHeader>
         <WrapButton>
           <Button
             className={month === "Januar" ? "active" : ""}
@@ -137,7 +141,7 @@ function App() {
             Dez
           </Button>
           <Button
-            className={month === "Gesamtes Jahr" ? "active" : ""}
+            className={month === "Alle" ? "active" : ""}
             onClick={resetAllFilters}
           >
             Alle
@@ -183,24 +187,35 @@ export default App;
 const WrapContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
+  justify-content: left;
+`;
+const WrapHeader = styled.section`
+  display: flex;
+  justify-content: center;
+  margin: auto;
 `;
 
 const WrapButton = styled.section`
   margin: auto;
   text-align: center;
 `;
+const IconLeftRight = styled.img`
+  width: 1rem;
+  margin-top: 2rem;
+`;
 
 const Button = styled.button`
-  text-align: center;
+  xtext-align: auto;
   height: 3rem;
-  width: 2.5rem;
+  width: 1.7rem;
   border: none;
   color: #c4d1d9;
   background-color: #f2f7fb;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: semi-bold;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0;
   cursor: pointer;
 
   &:first-child {
@@ -213,11 +228,11 @@ const Button = styled.button`
 
   &:hover {
     background-color: #040336;
-    opacity: 0.85;
+    opacity: 0.87;
     color: white;
     border-radius: 0.3rem;
-    height: 5rem;
-    width: 2.5rem;
+    height: 4.5rem;
+    width: 1.7rem;
     margin: 0rem;
     box-shadow: 0px 3px 6px rgb(4, 0, 41);
   }
@@ -225,8 +240,8 @@ const Button = styled.button`
     background-color: #040336;
     color: white;
     border-radius: 0.3rem;
-    height: 5rem;
-    width: 2.5rem;
+    height: 4.5rem;
+    width: 1.7rem;
     margin: 0rem;
     box-shadow: 0px 3px 6px rgb(4, 0, 41);
     transition: ease background-color 300ms;
