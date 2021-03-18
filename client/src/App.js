@@ -1,12 +1,11 @@
+import { useState } from "react";
+import styled from "styled-components";
+
 import { veggies } from "./fixtures/AllVeggies.js";
 import { fruities } from "./fixtures/AllFruities.js";
 import { salads } from "./fixtures/AllSalads.js";
 import months from "./fixtures/months.js";
 import PictureCard from "./components/Card.js";
-
-import { useState } from "react";
-
-import styled from "styled-components";
 //import Button from "Button.js";
 
 function App() {
