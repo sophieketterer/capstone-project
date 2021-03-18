@@ -13,9 +13,9 @@ function App() {
   console.log(fruities, 2);
   console.log(salads, 3);
 
-  // UseState für Veggies - month - fruties - salads
+  // UseState für Veggies - month - fruities - salads
   const [veggiesToRender, setVeggiesToRender] = useState(veggies);
-  const [frutiesToRender, setFruitiesToRender] = useState(fruities);
+  const [fruitiesToRender, setFruitiesToRender] = useState(fruities);
   const [saladsToRender, setSaladsToRender] = useState(salads);
   const [month, setMonth] = useState("Gesamtes Jahr");
 
@@ -46,7 +46,7 @@ function App() {
   }
 
   // Function um alles anzeigen zu lassen
-  function resetAll() {
+  function resetAllFilters() {
     setVeggiesToRender(veggies);
     setFruitiesToRender(fruities);
     setSaladsToRender(salads);
@@ -76,11 +76,11 @@ function App() {
           <Button onClick={() => filterAll(10)}>Okt</Button>
           <Button onClick={() => filterAll(11)}>Nov</Button>
           <Button onClick={() => filterAll(12)}>Dez</Button>
-          <Button onClick={resetAll}>Alle</Button>
+          <Button onClick={resetAllFilters}>Alle</Button>
         </WrapButton>
         <h3>Obst</h3>
         <WrapContainer>
-          {frutiesToRender.map((fruty, index) => (
+          {fruitiesToRender.map((fruty, index) => (
             <PictureCard
               key={index}
               imageUrl={fruty.imageUrl}
@@ -127,18 +127,13 @@ const WrapButton = styled.section`
 `;
 
 const Button = styled.button`
-  xdisplay: flex;
-  xflex-direction: row;
-  xalign-items: center;
   text-align: center;
   height: 3rem;
-  xwidth: 1.2rem;
   border: none;
   color: #c4d1d9;
   background-color: #f2f7fb;
   font-size: 1rem;
   font-weight: semi-bold;
-  xfont-color: #c4d1d9;
   margin-top: 2rem;
   xmargin: 0.5rem;
   cursor: pointer;
