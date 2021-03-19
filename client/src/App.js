@@ -1,11 +1,14 @@
 import { useState } from "react";
 import styled from "styled-components";
+import Modal from "react-overlays/Dropdown";
+//import Modal from "./components/Modal.js";
 
 import { veggies } from "./fixtures/AllVeggies.js";
 import { fruities } from "./fixtures/AllFruities.js";
 import { salads } from "./fixtures/AllSalads.js";
 import months from "./fixtures/months.js";
 import PictureCard from "./components/Card.js";
+
 //import Button from "Button.js";
 
 function App() {
@@ -168,6 +171,7 @@ function App() {
           ))}
         </WrapContainer>
         <h3>Salat</h3>
+
         <WrapContainer>
           {saladsToRender.map((salads, index) => (
             <PictureCard
@@ -189,6 +193,7 @@ const WrapContainer = styled.section`
   flex-wrap: wrap;
   justify-content: left;
 `;
+
 const WrapHeader = styled.section`
   display: flex;
   justify-content: center;
@@ -199,6 +204,7 @@ const WrapButton = styled.section`
   margin: auto;
   text-align: center;
 `;
+
 const IconLeftRight = styled.img`
   width: 1rem;
   margin-top: 2rem;
@@ -206,7 +212,7 @@ const IconLeftRight = styled.img`
 
 const Button = styled.button`
   xtext-align: auto;
-  height: 3rem;
+  height: 2.5rem;
   width: 1.7rem;
   border: none;
   color: #c4d1d9;
@@ -227,20 +233,20 @@ const Button = styled.button`
   }
 
   &:hover {
-    background-color: #040336;
-    opacity: 0.87;
-    color: white;
+    background-color: none;
+    opacity: 0.8;
+    color: #040336;
     border-radius: 0.3rem;
-    height: 4.5rem;
+    height: 3.5rem;
     width: 1.7rem;
     margin: 0rem;
-    box-shadow: 0px 3px 6px rgb(4, 0, 41);
+    box-shadow: 0px 3px 6px #c4d1d9;
   }
   &.active {
     background-color: #040336;
     color: white;
     border-radius: 0.3rem;
-    height: 4.5rem;
+    height: 3.5rem;
     width: 1.7rem;
     margin: 0rem;
     box-shadow: 0px 3px 6px rgb(4, 0, 41);
