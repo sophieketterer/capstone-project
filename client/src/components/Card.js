@@ -1,7 +1,7 @@
-export default function PictureCard({ imageUrl, name }) {
+export default function PictureCard({ imageUrl, name, clickHandler }) {
   return (
     <div>
-      <img src={imageUrl} alt={name} />
+      <img onClick={clickHandler} src={imageUrl} alt={name} />
     </div>
   );
 }

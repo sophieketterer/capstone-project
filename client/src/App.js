@@ -1,14 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Modal from "react-overlays/Dropdown";
-//import Modal from "./components/Modal.js";
 
 import { veggies } from "./fixtures/AllVeggies.js";
 import { fruities } from "./fixtures/AllFruities.js";
 import { salads } from "./fixtures/AllSalads.js";
 import months from "./fixtures/months.js";
 import PictureCard from "./components/Card.js";
-
+import VeggiesModal from "./components/VeggiesModal.js";
 //import Button from "Button.js";
 
 function App() {
@@ -21,6 +19,18 @@ function App() {
   const [fruitiesToRender, setFruitiesToRender] = useState(fruities);
   const [saladsToRender, setSaladsToRender] = useState(salads);
   const [month, setMonth] = useState("Alle");
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [veggieToShow, setVeggieToShow] = useState({});
+
+  function showDetails(veggie) {
+    setVeggieToShow(veggie);
+    setModalIsOpen(true);
+  }
+
+  function closeModal() {
+    setModalIsOpen(false);
+  }
 
   // Filter Function für Veggies
   function filterVeggies(month) {
@@ -157,6 +167,7 @@ function App() {
               key={index}
               imageUrl={fruty.imageUrl}
               name={fruty.name}
+              clickHandler={() => showDetails(fruty)}
             />
           ))}
         </WrapContainer>
@@ -167,6 +178,7 @@ function App() {
               key={index}
               imageUrl={veggie.imageUrl}
               name={veggie.name}
+              clickHandler={() => showDetails(veggie)}
             />
           ))}
         </WrapContainer>
@@ -178,9 +190,16 @@ function App() {
               key={index}
               imageUrl={salads.imageUrl}
               name={salads.name}
+              clickHandler={() => showDetails(salads)}
             />
           ))}
         </WrapContainer>
+
+        <VeggiesModal
+          isOpen={modalIsOpen}
+          veggie={veggieToShow}
+          closeModal={closeModal}
+        />
       </main>
     </div>
   );
