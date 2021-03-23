@@ -177,51 +177,91 @@ const veggies = [
     name: "Rotkohl",
     months: [7, 8, 9, 10, 11],
     imageUrl: "/images/Rotkohl.svg",
+    text:
+      "Warum wird der Rotkohl in manchen Regionen auch Blaukraut genannt? Ganz einfach: der Rotkohl zeigt mit seiner Farbe den pH-Wert des Bodens an, in sauren Böden ist die Farbe eher rot und in alkalischen Böden nimmt der Kohl eine eher bläuliche Farbe an. Die farbenfrohen Köpfe mit einem Gewicht zwischen 0,5 und 2 kg werden rund ums Jahr angeboten. Ab Juni wird der Frührotkohl geerntet – ideal für Rohkostsalate -, gefolgt von den Sommer- und Herbstsorten. Ab September bis November ernten die Gemüsebauern Dauerkohl, der eingelagert und bis Juli angeboten wird. Über die Hälfte der deutschen Produktion wird verarbeitet, vorwiegend zu Sauerkonserven, aber auch zu Tiefkühlprodukten. Das größte zusammenhängende Kohlanbaugebiet Europas liegt in Dithmarschen, hinter den Deichen der Nordseeküste. Es bringt den höchsten Ertrag und die schwersten Köpfe hervor. Das gemäßigte, feuchte Seeklima und der schwere, gehaltvolle Marschboden bieten ideale Voraussetzungen für den Kohl mit seinem hohen Nährstoff- und Wasserbedarf.",
   },
   {
     name: "Schwarzwurzel",
     months: [10, 11],
     imageUrl: "/images/Schwarzwurzel.svg",
+    text:
+      "Außen schwarz, innen weiß: Die Schwarzwurzel gilt als Spargel des Winters. Sie ist reich an Vitaminen und Mineralstoffen und schmeckt nicht nur in Suppen. Bis zum 16. Jahrhundert kannte man die Schwarzwurzel nur in Spanien, wo sie als wild wachsende, wirksame Heilpflanze zum Beispiel gegen Schlangenbisse bekannt war. Erst seit dem 17. Jahrhundert wurden Schwarzwurzeln auch als Gemüse angebaut. Die Schwarzwurzel ist reich an Vitaminen und Mineralstoffen und schmeckt nicht nur in Suppen. Die Schwarzwurzel ist eine ausdauernde, winterharte Pflanze, welche sehr nährstoffreich ist.",
   },
-  { name: "Spargel", months: [4, 5, 6], imageUrl: "/images/Spargel.svg" },
+  {
+    name: "Spargel",
+    months: [4, 5, 6],
+    imageUrl: "/images/Spargel.svg",
+    text:
+      "Frühlingszeit ist Spargelzeit. Dann hat die heimische Delikatesse Hochsaison auf deutschen Feldern und sorgt so von April bis Juni für frischen Spitzengenuss auf dem Esstisch. Dabei besticht das Stangengemüse durch seinen unverkennbaren Geschmack und seine vielfältigen Zubereitungsmöglichkeiten.",
+  },
   {
     name: "Spinat",
     months: [3, 4, 5, 9, 10],
     imageUrl: "/images/Spinat.svg",
+    text: "Lorem ipsum ..",
   },
   {
     name: "Spitzkohl",
     months: [6, 7, 8, 9, 10, 11],
     imageUrl: "/images/Spitzkohl.svg",
+    text:
+      "Der Gemüsekohl mit zarten, gelblich- bis bläulichgrünen, großen Blättern und kegeligem Wuchs schmeckt dezenter und feiner als der verwandte Weißkohl. Spitzkohl oder Spitzkraut ist der edle Verwandte des Weißkohl – sein Geschmack ist nämlich etwas dezenter und feiner als der von Weißkohl. Schon im Frühjahr ist das Gemüse frisch vom Feld im Handel erhältlich.  Die zarten, gelblich- bis bläulichgrünen, großen Blätter laufen locker, kegelförmig nach obenhin spitz um den Strunk herum, daher auch der Name „Spitzkohl“.",
   },
   {
     name: "Staudensellerie",
     months: [5, 6, 7, 8, 9, 10, 11],
     imageUrl: "/images/Staudensellerie.svg",
+    text:
+      "Staudensellerie war schon bei den alten Römern und Griechen beliebt. Das Gemüse ist sehr kalorienarm und passt zu Dips wie Salaten. Stangensellerie – auch Stiel-, Stauden- oder Bleichsellerie sind übliche Bezeichnungen – hat lange, fleischige Blattstiele und eine kleine Wurzelknolle. In den Handel kommen die Blattstiele, die pro Pflanze bis zu einem Kilogramm wiegen können. Sie werden für Salate oder als Gemüse verwendet. Die für den Stangensellerie typischen Farben reichen von blassgelb bis kräftig grün.",
   },
-  { name: "Steckrübe", months: [9, 10], imageUrl: "/images/Steckruebe.svg" },
-  { name: "Tomate", months: [8, 9, 10], imageUrl: "/images/Tomate.svg" },
+  {
+    name: "Steckrübe",
+    months: [9, 10],
+    imageUrl: "/images/Steckruebe.svg",
+    text:
+      "Steckrüben waren in Kriegszeiten ein wichtiger Kohlenhydratlieferant. Danach wurden Steckrüben lange von unseren Speiseplänen gestrichen. Was in der Nachkriegszeit lange Zeit in Vergessenheit geraten war, wird heute wieder geschätzt: Steckrüben schmecken nicht nur lecker, sondern enthalten besonders viele Vitalstoffe. Das mit Kohlrabi verwandte Powergemüse ist damit bestens geeignet für alle, die schwungvoll und fit durch die kalte Jahreszeit kommen wollen.",
+  },
+  {
+    name: "Tomate",
+    months: [8, 9, 10],
+    imageUrl: "/images/Tomate.svg",
+    text:
+      "Ob Cherrystrauchtomate, Rispentomate, Strauchtomate, Cherry-Datteltomate, Kirschtomate, Flaschen- oder Fleischtomate – mit +/- 8 Kilo Pro-Kopf-Verbrauch ist das leuchtend rote Nachtschattengewächs regelmäßig das erklärte Lieblingsgemüse der Deutschen. Als Nachtschattengewächs gehört die Tomate auch in die Kategorie des sogenannten Fruchtgemüses und ist deshalb mit Auberginen, Gurken, Kürbissen und Zucchini verwandt. Tomaten werden hierzulande von April bis Oktober geerntet – Auffällig ist, dass sich gerade die Snack-Tomate mehr und mehr als gesundes Trend-Gemüse in Deutschland durchsetzt. Ihr Marktanteil steigt seit Jahren stetig.",
+  },
   {
     name: "Weißkohl",
     months: [7, 8, 9, 10, 11],
     imageUrl: "/images/Weisskohl.svg",
+    text:
+      "Der Weißkohl, auch Weißkraut, Weißkabis, Kappes oder Kraut genannt, ist eine Variante des Kopfkohls und hat vor allem im Herbst und Winter Saison. In Deutschland ist der Weißkohl eine der beliebtesten Kohlsorten. In Europa ist Deutschland eines der Hauptanbauländer für Weißkohl, die wilde Form wächst allerdings am Mittelmeer und Atlantikküste.",
   },
   {
     name: "Wirsing",
     months: [6, 7, 8, 9, 10, 11],
     imageUrl: "/images/Wirsing.svg",
+    text:
+      "Wirsing ist ein besonders dekorativer Vertreter der Kohlsippe. In Deutschland wird er seit dem 18. Jahrhundert angebaut. Er ist auch als Wirsching, Savoyer Kohl oder schweizerisch Wirz bekannt. Neben Rot- und Weißkohl ist er die drittwichtigste Kopfkohlart. Anders als bei seinen glatten Verwandten sind seine Blätter locker übereinander angeordnet. Sie öffnen sich nach außen häufig wie eine Blüte, sind am Rand gewellt, netzartig gerippt und höckerig blasig gekräuselt. Ihre Farbe reicht je nach Sorte von gelblich- bis dunkelgrün, sagt aber nichts über die Qualität aus.",
   },
   {
     name: "Zucchini",
     months: [6, 7, 8, 9, 10],
     imageUrl: "/images/Zucchini.svg",
+    text:
+      "Die Zucchini ist eine Kürbisart und botanisch gesehen eine Beere. Die Früchte entwickeln sich an einer rasch wachsenden, bodendeckenden Pflanze mit dunkelgrünen Blättern. Sie müssen nicht immer grün und gurkenförmig sein. Es gibt auch walzenförmige oder sechskantige Früchte. Farblich variieren sie von cremeweiß, gelb, grüngelb bis dunkelgrün – auch schon mal mit Sprenkeln oder Streifen. Das Fruchtfleisch ist weiß bis hellgrün wie das der Gurke, aber weniger saftig und fester im Biss. Zucchini können bis zur Größe eines Kürbis auswachsen, verlieren dann allerdings an Saftigkeit und Aroma. Deswegen werden sie halbreif, noch mit weicher Schale geerntet. Bei rund 14 bis 20 Zentimetern Länge hat das Fruchtgemüse sein Idealmaß erreicht, ebenso den optimalen Geschmack und die Schale ist noch zart.",
   },
   {
     name: "Zuckerschote",
     months: [6, 7, 8, 9, 10],
     imageUrl: "/images/Zuckerschoten.svg",
+    text: "Lorem ipsum ...",
   },
-  { name: "Zwiebeln", months: [8, 9, 10], imageUrl: "/images/Zwiebel.svg" },
+  {
+    name: "Zwiebeln",
+    months: [8, 9, 10],
+    imageUrl: "/images/Zwiebel.svg",
+    text:
+      "Die Zwiebel zählt zur Familie der Zwiebelgewächse (Alliaceae). Als nahrhaftes Lebensmittel war sie bereits vor 5.000 Jahren in den Steppen der Mongolei und Türkei bekannt. Für Pyramidenarbeiter in Ägypten und die römischen Legionäre waren Zwiebeln ein Hauptnahrungsmittel. In Deutschland begann der Anbau der Zwiebel ab dem 12. Jahrhundert. Heute nimmt das würzige Speicherorgan eine Spitzenstellung ein: Etwa sieben Kilo Zwiebeln verzehrt jeder Deutsche pro Jahr. Die Sommerzwiebeln werden im März gesät, sobald der Boden frostfrei ist. Sie machen 85 Prozent des deutschen Zwiebelanbaus aus. Ab August bis Ende September welkt der Zwiebelhals und das Laub fällt um: Die Zwiebeln sind reif. Das Laub wird auf 10 Zentimeter Länge abgeschlagen und die Zwiebeln geerntet. Anschließend bleiben sie einige Tage zum Trocknen auf dem Feld liegen, bevor die Ernte ins Lager eingebracht wird. Ventilatoren und Windkanäle trocknen die aufgeschütteten Zwiebeln weiter und Heizgeräte erwärmen die Luft auf 25 bis 28 Grad Celsius. Das Trocknen im Lager kann gut eine Woche dauern. Erst wenn die Zwiebeln „raschel-trocken“ sind, wird die Luft auf drei bis vier Grad abgekühlt. Dadurch fallen die gelb-bräunlichen Zwiebeln in eine Art Winterschlaf und lassen sich bis zum Frühjahr des nächsten Jahres lagern.",
+  },
 ];
 
 export { veggies };
