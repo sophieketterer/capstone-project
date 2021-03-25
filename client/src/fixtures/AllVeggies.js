@@ -3,9 +3,16 @@ const veggies = [
     name: "Aubergine",
     months: [8, 9, 10],
     imageUrl: "/images/Aubergine.svg",
-    text: "Lorem ipsum ...",
+    text:
+      "Die Aubergine hat viele Namen: In Italien heißt sie Melanzano, in Spanien Bereneja, und die Engländer nennen sie Eggplant. Die mediterrane Frucht ist botanisch nah mit der Tomate verwandt, stammt aber nicht aus Südamerika sondern aus Indien. Seit 4.000 Jahren wird die Aubergine in Indien kultiviert und ist eine der Hauptzutaten in der Orientküche. In ihrer Erscheinung zeigt sie sich in vielen Farben: dunkelviolett und länglich geformt ist die bekannteste Optik, aber auch in helllila, gelb, weiß, orange und rot gibt es die Eierfrucht zu kaufen. Hierzulande wächst die dunkelhäutige Frucht vor allem unter Glas und Folie. Das liegt daran, dass das Gemüse Sonne liebt und auch in der Wasser- und Nährstoffversorgung noch etwas anspruchsvoller ist als ihre nahen Verwandten Tomate und Paprika.",
   },
-  { name: "Bärlauch", months: [3, 4, 5], imageUrl: "/images/Bärlauch.svg" },
+  {
+    name: "Bärlauch",
+    months: [3, 4, 5],
+    imageUrl: "/images/Bärlauch.svg",
+    text:
+      "Der Bärlauch - eine früh im Jahr austreibende Pflanzenart - ist ein geschätztes Wildgemüse. Der Bärlauch ist verwandt mit Schnittlauch, Zwiebel und Knoblauch. In Deutschland ist der Bärlauch im Süden verbreitet, im Norden seltener (und teilweise geschützt). Der Bärlauch ist eine altbekannte Gemüse-, Gewürz- und Heilpflanze. Vorwiegend werden die Blätter genutzt. Aber Achtung: Es besteht Verwechslungsgefahr mit Giftpflanzen, obwohl der typische Geruch, der beim Reiben der Blätter entsteht, gute Orientierung bietet. Bärlauch wird verwechselt mit Maiglöckchen, den im Frühjahr austreibenden Blättern der Herbstzeitlosen oder den meist ungefleckten Blättern jüngerer Pflanzen des Gefleckten Aronstabs. Diese drei Pflanzen sind äußerst giftig und es kommt immer wieder zu teils tödlichen Vergiftungen.",
+  },
   {
     name: "Blumenkohl",
     months: [5, 6, 7, 8, 9, 10],
@@ -157,7 +164,8 @@ const veggies = [
     name: "Rettich",
     months: [5, 6, 7, 8, 9, 10],
     imageUrl: "/images/Rettich.svg",
-    text: "Lorem ipsum ...",
+    text:
+      "Der „Radi“ gilt als ur-bayerisch. Zuhause ist er aber trotzdem ganz woanders, nämlich im alten Ägypten, wo sich die Fronarbeiter beim Bau der Cheopspyramide bereits vor Jahrtausenden mit einem Biss in den Rettich zu stärken pflegten. Später verbreitete sich das Gemüse auch in China und im antiken Griechenland sowie im alten Rom. Die Römer waren es dann, die den Rettich über die Alpen mit nach Deutschland brachten, wo man ihn seit dem 13. Jahrhundert kennt.",
   },
   {
     name: "Rosenkohl",
@@ -198,7 +206,8 @@ const veggies = [
     name: "Spinat",
     months: [3, 4, 5, 9, 10],
     imageUrl: "/images/Spinat.svg",
-    text: "Lorem ipsum ..",
+    text:
+      "Wer gerne Spinat isst, kann sich kaum vorstellen, dass ganze Generationen wegen dieses köstlichen Gemüses ungute Erinnerungen an die Mahlzeiten ihrer Kindheit hatten. Das liegt daran, dass wir heute ganz andere Sorten auf den Tisch bekommen. Früher enthielt Spinat mehr Bitterstoffe und Oxalsäure als heute, schmeckte entsprechend herb und hinterließ ein unangenehmes pelziges Gefühl im Mund. Das ist dank moderner Zuchtmethoden aber endgültig Geschichte. Auch die früher übliche, nicht unbedingt appetitliche Zubereitung von Spinat als gehacktem und zerkochtem Brei, ist kaum noch üblich. Stattdessen kommt inzwischen immer häufiger Spinat in seiner leckeresten Form – also als Blattspinat – auf den Tisch.",
   },
   {
     name: "Spitzkohl",
@@ -253,7 +262,8 @@ const veggies = [
     name: "Zuckerschote",
     months: [6, 7, 8, 9, 10],
     imageUrl: "/images/Zuckerschoten.svg",
-    text: "Lorem ipsum ...",
+    text:
+      "Ob man sie nun Zuckerschoten, Zuckererbsen oder Kaiserschoten nennt: Diese feinste Variante der Erbse hat ihren ganz besonderen Reiz. Seinen Zweitnamen „Kaiserschote“ trägt das Gemüse übrigens aus gutem Grund: Schon im späten Mittelalter kam diese feinste Variante der Erbse nur in den allerbesten Kreisen auf den Tisch. In England soll der Verzehr sogar per Gerichtsbeschluss von 1433 geregelt worden sein – nur wer mindestens Baron war, durfte Erbsen essen. König Ludwig XIV war sogar so begeistert von diesem Gemüse, dass er Teile des Louvre-Parks in einen Erbsen-Garten umfunktionieren ließ. Dem sogenannten Sonnenkönig verdanken wir letztlich also einen der größten kulinarischen Frühsommer-Genüsse: Erst er nämlich machte eine Gewohnheit daraus, Erbsen bzw. Zuckerschoten als frisches Gemüse zu essen. Bis dahin kannte man diese Hülsenfrüchte, die zu den ältesten Kulturpflanzen überhaupt gehören, zwar als Lebensmittel – aber nur im getrockneten Zustand.",
   },
   {
     name: "Zwiebeln",

@@ -2,63 +2,117 @@ import Modal from "react-modal";
 import styled from "styled-components";
 
 Modal.setAppElement("#root");
-Modal.defaultStyles.overlay.backgroundColor = "#ffffffe6";
-Modal.defaultStyles.overlay.border = "none";
+//Modal.defaultStyles.overlay.backgroundColor = "#ffffffe6";
+//Modal.defaultStyles.overlay.border = "none";
 
 export default function VeggiesModal({ veggie, isOpen, closeModal }) {
   return (
     <WrapModal>
-      <StyledModal isOpen={isOpen} onRequestClose={closeModal}>
+      <Modal isOpen={isOpen} onRequestClose={closeModal}>
+        <CloseButton onClick={closeModal} src="/images/Close.svg"></CloseButton>
         <Picture src={veggie.imageUrl} alt={veggie.name} />
-        <h3>{veggie.name}</h3>
+        <WrapDot>
+          <Dot src="/images/Dot.svg" />
+          <Dot src="/images/Dot.svg" />
+          <Dot src="/images/Dot.svg" />
+          <Dot src="/images/Dot.svg" />
+          <Dot src="/images/Dot.svg" />
+          <Dot src="/images/Dot.svg" />
+          <Dot src="/images/Dot.svg" />
+          <Dot src="/images/Dot.svg" />
+          <Dot src="/images/Dot.svg" />
+          <Dot src="/images/Dot.svg" />
+          <Dot src="/images/Dot.svg" />
+          <Dot src="/images/Dot.svg" />
+        </WrapDot>
+
+        <WrapInitial>
+          <MonthInitial>J</MonthInitial>
+          <MonthInitial>F</MonthInitial>
+          <MonthInitial>M</MonthInitial>
+          <MonthInitial>A</MonthInitial>
+          <MonthInitial>M</MonthInitial>
+          <MonthInitial>J</MonthInitial>
+          <MonthInitial>J</MonthInitial>
+          <MonthInitial>A</MonthInitial>
+          <MonthInitial>S</MonthInitial>
+          <MonthInitial>O</MonthInitial>
+          <MonthInitial>N</MonthInitial>
+          <MonthInitial>D</MonthInitial>
+        </WrapInitial>
+
+        <Head>{veggie.name}</Head>
         <InfoText>{veggie.text}</InfoText>
-      </StyledModal>
+      </Modal>
     </WrapModal>
   );
 }
+const WrapDot = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 
+  margin-top: 1.5rem;
+`;
+const Dot = styled.img`
+  width: 0.25rem;
+`;
+const MonthInitial = styled.p`
+  color: #c4d1d9;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.3rem;
+`;
+const WrapInitial = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.6rem;
+`;
 const WrapModal = styled.section`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
+  flex-directon: column;
+  justify-content: center;
   cursor: pointer;
-  hight: 25.75rem;
+  hight: auto;
+  margin: 0;
+`;
+
+const CloseButton = styled.img`
+  display: flex;
+  flex-directon: column;
+  justify-content: auto;
+  margin: 0 0 1rem auto;
+
+  width: 1.5rem;
+  cursor: pointer;
+`;
+
+const Picture = styled.img`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 15.5rem;
+  margin: auto;
+  margin-bottom: 3rem;
+`;
+
+const Head = styled.p`
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 2.9rem;
+  margin-bottom: 0.5rem;
+  color: #040336;
 `;
 
 const InfoText = styled.p`
   color: #676666;
-  display: flex;
-  justify-content: left;
-  align-items: left;
   text-align: left;
-  margin-top: 1rem;
   margin-bottom: 2rem;
-  padding: 1.5rem;
+  margin: 0;
+  padding: 0.3rem;
   font-size: 1rem;
   font-weight: 200;
   line-height: 1.5rem;
-`;
-const StyledModal = styled(Modal)`
-  background-color: #ffffffe6;
-  margin: 2.75rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: left;
-  align-items: center;
-  cursor: pointer;
-  border: none;
-  border-radius: 1rem;
-  margin: 2rem;
-  padding; 2rem;
-  box-shadow: 2px 2px 15px #3CC6C680;
-`;
-
-const Picture = styled.img`
-  width: 18.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem 0rem 0.5rem 0rem;
 `;

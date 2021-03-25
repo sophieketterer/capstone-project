@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 
 import { veggies } from "./fixtures/AllVeggies.js";
@@ -8,6 +9,7 @@ import months from "./fixtures/months.js";
 import PictureCard from "./components/Card.js";
 import VeggiesModal from "./components/VeggiesModal.js";
 import MonthButton from "./components/Button.js";
+import Start from "./pages/Start.js";
 
 //import Button from "Button.js";
 
@@ -29,7 +31,7 @@ function App() {
     setVeggieToShow(veggie);
     setModalIsOpen(true);
   }
-
+  // Modal open/close
   function closeModal() {
     setModalIsOpen(false);
   }
@@ -75,63 +77,75 @@ function App() {
   }
 
   return (
-    <div>
-      <main>
-        <WrapHeader>
-          <IconLeftRight src="/images/Pfeil-left.svg"></IconLeftRight>
-          <h2>{month}</h2>
-          <IconLeftRight src="/images/Pfeil-right.svg"></IconLeftRight>
-        </WrapHeader>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Start />
+        </Route>
+      </Switch>
 
-        <MonthButton
-          month={month}
-          filterAll={filterAll}
-          resetAllFilters={resetAllFilters}
-        />
+      <Switch>
+        <Route path="/all">
+          <div>
+            <main>
+              <WrapHeader>
+                <IconLeftRight src="/images/Pfeil-left.svg"></IconLeftRight>
+                <h2>{month}</h2>
+                <IconLeftRight src="/images/Pfeil-right.svg"></IconLeftRight>
+              </WrapHeader>
 
-        <h3>Obst</h3>
-        <WrapContainer>
-          {fruitiesToRender.map((fruty, index) => (
-            <PictureCard
-              key={index}
-              imageUrl={fruty.imageUrl}
-              name={fruty.name}
-              clickHandler={() => showDetails(fruty)}
-            />
-          ))}
-        </WrapContainer>
+              <MonthButton
+                month={month}
+                filterAll={filterAll}
+                resetAllFilters={resetAllFilters}
+              />
 
-        <h3>Gemüse</h3>
-        <WrapContainer>
-          {veggiesToRender.map((veggie, index) => (
-            <PictureCard
-              key={index}
-              imageUrl={veggie.imageUrl}
-              name={veggie.name}
-              clickHandler={() => showDetails(veggie)}
-            />
-          ))}
-        </WrapContainer>
+              <h3>Obst</h3>
+              <WrapContainer>
+                {fruitiesToRender.map((fruty, index) => (
+                  <PictureCard
+                    key={index}
+                    imageUrl={fruty.imageUrl}
+                    name={fruty.name}
+                    clickHandler={() => showDetails(fruty)}
+                  />
+                ))}
+              </WrapContainer>
 
-        <h3>Salat</h3>
-        <WrapContainer>
-          {saladsToRender.map((salads, index) => (
-            <PictureCard
-              key={index}
-              imageUrl={salads.imageUrl}
-              name={salads.name}
-              clickHandler={() => showDetails(salads)}
-            />
-          ))}
-        </WrapContainer>
+              <h3>Gemüse</h3>
+              <WrapContainer>
+                {veggiesToRender.map((veggie, index) => (
+                  <PictureCard
+                    key={index}
+                    imageUrl={veggie.imageUrl}
+                    name={veggie.name}
+                    clickHandler={() => showDetails(veggie)}
+                  />
+                ))}
+              </WrapContainer>
 
-        <VeggiesModal
-          isOpen={modalIsOpen}
-          veggie={veggieToShow}
-          closeModal={closeModal}
-        />
-      </main>
-    </div>
+              <h3>Salat</h3>
+              <WrapContainer>
+                {saladsToRender.map((salads, index) => (
+                  <PictureCard
+                    key={index}
+                    imageUrl={salads.imageUrl}
+                    name={salads.name}
+                    clickHandler={() => showDetails(salads)}
+                  />
+                ))}
+              </WrapContainer>
+
+              <VeggiesModal
+                isOpen={modalIsOpen}
+                veggie={veggieToShow}
+                closeModal={closeModal}
+              />
+            </main>
+          </div>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
