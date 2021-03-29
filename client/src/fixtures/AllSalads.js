@@ -3,8 +3,13 @@ const salads = [
     name: "Batavia",
     months: [5, 6, 7, 8, 9, 10],
     imageUrl: "/images/Batavia.svg",
-    text:
-      "Der Bataviasalat gehört zu den bei uns noch relativ neuen Sorten, die dem altbekannten Kopfsalat wie auch dem ebenfalls erfolgreichen Eisbergsalat ernsthaft Konkurrenz machen. Kein Wunder, denn die Franzosen haben für den Bataviasalat das Beste aus den beiden anderen Salaten zusammengezüchtet. In der Form ähnelt der Batavia darum am ehesten dem Kopfsalat, die Konsistenz ist aber wie beim Eissalat etwas fester und knackiger. Der eigentliche Clou ist aber die Optik: Die teils grünen, teils rötlich-braunen Blätter sind an den Rändern relativ stark gekräuselt und sehen in der Salatschüssel oder auf kalten Platten klasse aus. Geschmack Konsistenz: Bataviasalat ähnelt mit seiner knackigen Konsistenz dem Eisbergsalat; sein Geschmack ist herzhafter und etwas würziger als der von Kopfsalat.",
+    text: {
+      Pararaph1:
+        "Der Bataviasalat gehört zu den bei uns noch relativ neuen Sorten,",
+      Pararaph2: "die dem altbekannten Kopfsalat wie auch dem",
+      Pararaph3:
+        "ebenfalls erfolgreichen Eisbergsalat ernsthaft Konkurrenz machen. Kein Wunder, denn die Franzosen haben für den Bataviasalat das Beste aus den beiden anderen Salaten zusammengezüchtet. In der Form ähnelt der Batavia darum am ehesten dem Kopfsalat, die Konsistenz ist aber wie beim Eissalat etwas fester und knackiger. Der eigentliche Clou ist aber die Optik: Die teils grünen, teils rötlich-braunen Blätter sind an den Rändern relativ stark gekräuselt und sehen in der Salatschüssel oder auf kalten Platten klasse aus. Geschmack Konsistenz: Bataviasalat ähnelt mit seiner knackigen Konsistenz dem Eisbergsalat; sein Geschmack ist herzhafter und etwas würziger als der von Kopfsalat.",
+    },
   },
   {
     name: "Chicorée",

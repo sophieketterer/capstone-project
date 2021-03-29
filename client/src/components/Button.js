@@ -129,6 +129,7 @@ const Button = styled.button`
     height: 3.5rem;
     width: 1.7rem;
     margin: 0rem;
+    position: relative;
     box-shadow: 0px 3px 6px rgb(4, 0, 41);
     transition: ease background-color 300ms;
   }

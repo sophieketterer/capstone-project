@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  NavLink,
+} from "react-router-dom";
 import styled from "styled-components";
 
 import { veggies } from "./fixtures/AllVeggies.js";
@@ -10,6 +15,7 @@ import PictureCard from "./components/Card.js";
 import VeggiesModal from "./components/VeggiesModal.js";
 import MonthButton from "./components/Button.js";
 import Start from "./pages/Start.js";
+import { ReactComponent as LogoSvg } from "./images/Reiflich.svg";
 
 //import Button from "Button.js";
 
@@ -86,6 +92,12 @@ function App() {
 
       <Switch>
         <Route path="/all">
+          <nav>
+            <NavLinkStyled to="/">
+              <IconBack src="/images/Reiflich_Pfeil.svg"></IconBack>
+            </NavLinkStyled>
+          </nav>
+
           <div>
             <main>
               <WrapHeader>
@@ -99,8 +111,10 @@ function App() {
                 filterAll={filterAll}
                 resetAllFilters={resetAllFilters}
               />
-
-              <h3>Obst</h3>
+              <WrapCategory>
+                <ReifTo src="/images/Reiflich_b.svg"></ReifTo>
+                <h3>Obst</h3>
+              </WrapCategory>
               <WrapContainer>
                 {fruitiesToRender.map((fruty, index) => (
                   <PictureCard
@@ -112,7 +126,11 @@ function App() {
                 ))}
               </WrapContainer>
 
-              <h3>Gemüse</h3>
+              <WrapCategory>
+                <ReifTo src="/images/Reiflich_b.svg"></ReifTo>
+                <h3>Gemüse</h3>
+              </WrapCategory>
+
               <WrapContainer>
                 {veggiesToRender.map((veggie, index) => (
                   <PictureCard
@@ -124,7 +142,11 @@ function App() {
                 ))}
               </WrapContainer>
 
-              <h3>Salat</h3>
+              <WrapCategory>
+                <ReifTo src="/images/Reiflich_b.svg"></ReifTo>
+                <h3>Salat</h3>
+              </WrapCategory>
+
               <WrapContainer>
                 {saladsToRender.map((salads, index) => (
                   <PictureCard
@@ -151,6 +173,13 @@ function App() {
 
 export default App;
 
+const Log = styled(LogoSvg)`
+  fill: hotpink;
+  width: 0.3rem;
+  margin: 0;
+  align-self: start;
+`;
+
 const WrapContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
@@ -165,6 +194,28 @@ const WrapHeader = styled.section`
 `;
 
 const IconLeftRight = styled.img`
+  color: #c4d1d9;
   width: 1rem;
+  margin-top: 0.1rem;
+`;
+
+const NavLinkStyled = styled(NavLink)`
+  cursor: pointer;
+`;
+
+const IconBack = styled.img`
+  width: 5.6rem;
+  margin-top: 0.8rem;
+`;
+
+const WrapCategory = styled.section`
+  display: flex;
+  flex-direction: row;
+`;
+
+const ReifTo = styled.img`
   margin-top: 2rem;
+  margin-right: -0.2rem;
+  margin-bottom: 0;
+  width: 5rem;
 `;
