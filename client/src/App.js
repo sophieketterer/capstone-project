@@ -14,6 +14,7 @@ import months from "./fixtures/months.js";
 import PictureCard from "./components/Card.js";
 import VeggiesModal from "./components/VeggiesModal.js";
 import MonthButton from "./components/Button.js";
+import SearchBar from "./components/SearchBar.js";
 import Start from "./pages/Start.js";
 import { ReactComponent as LogoSvg } from "./images/Reiflich.svg";
 
@@ -100,6 +101,12 @@ function App() {
 
           <div>
             <main>
+              <SearchBar
+                veggiesToRender={veggiesToRender}
+                fruitiesToRender={fruitiesToRender}
+                saladsToRender={saladsToRender}
+              ></SearchBar>
+
               <WrapHeader>
                 <IconLeftRight src="/images/Pfeil-left.svg"></IconLeftRight>
                 <h2>{month}</h2>
@@ -205,12 +212,13 @@ const NavLinkStyled = styled(NavLink)`
 
 const IconBack = styled.img`
   width: 5.6rem;
-  margin-top: 0.8rem;
+  margin-top: 2rem;
 `;
 
 const WrapCategory = styled.section`
   display: flex;
   flex-direction: row;
+  margin-top: -1rem;
 `;
 
 const ReifTo = styled.img`
