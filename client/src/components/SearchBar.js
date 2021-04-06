@@ -1,106 +1,201 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function SearchBar({
   veggiesToRender,
   fruitiesToRender,
   saladsToRender,
+  setVeggiesToRender,
+  setFruitiesToRender,
+  setSaladsToRender,
 }) {
   const [searchBarIsOpen, setSearchBarIsOpen] = useState(false);
   const [inputField, setInputField] = useState("");
   const [searchSolution, setSearchSolution] = useState([]);
 
-  const allToRender = [
-    ...veggiesToRender,
-    ...fruitiesToRender,
-    ...saladsToRender,
-  ];
-
   function handleKey(event) {
     if (event.key === "Enter") {
-      const solution = allToRender.filter((value) => {
+      const veggies = veggiesToRender.filter((value) => {
         return value.name
           .toLowerCase()
           .includes(event.target.value.toLowerCase());
       });
-      console.log(solution, 111);
+
+      setVeggiesToRender(veggies);
+
+      const fruities = fruitiesToRender.filter((value) => {
+        return value.name
+          .toLowerCase()
+          .includes(event.target.value.toLowerCase());
+      });
+
+      setFruitiesToRender(fruities);
+
+      const salads = saladsToRender.filter((value) => {
+        return value.name
+          .toLowerCase()
+          .includes(event.target.value.toLowerCase());
+      });
+      setSaladsToRender(salads);
     }
   }
 
   function handleChange(event) {
     setInputField(event.target.value);
     if (event.target.value) {
-      const solution = allToRender.filter((value) => {
+      const veggies = veggiesToRender.filter((value) => {
         return value.name
           .toLowerCase()
-          .includes(event.target.value.toLowerCase());
+          .startsWith(event.target.value.toLowerCase());
       });
+
+      const fruities = fruitiesToRender.filter((value) => {
+        return value.name
+          .toLowerCase()
+          .startsWith(event.target.value.toLowerCase());
+      });
+
+      const salads = saladsToRender.filter((value) => {
+        return value.name
+          .toLowerCase()
+          .startsWith(event.target.value.toLowerCase());
+      });
+
+      const solution = [...salads, ...fruities, ...veggies];
       setSearchSolution(solution);
     } else {
       setSearchSolution([]);
     }
   }
 
-  console.log(searchSolution, 555);
-  return (
-    <div>
-      <Lupe
-        onClick={() => setSearchBarIsOpen(!searchBarIsOpen)}
-        src="/images/Lupe.svg"
-        alt=""
-      />
+  function handleSearchClick(event) {
+    setInputField(event.target.innerText);
+    setSearchSolution([]);
+    document.getElementById("inputField").focus();
+  }
 
-      {searchBarIsOpen && (
-        <>
-          <InputField
-            onKeyDown={handleKey}
-            onChange={handleChange}
-            value={inputField}
-            type="search"
-            placeholder="Suche"
-          />
-          {searchSolution &&
-            searchSolution.map((solution) => {
-              return <p key={solution.name}>{solution.name}</p>;
-            })}
-        </>
-      )}
-    </div>
+  function searchBarOpen() {
+    setSearchBarIsOpen(!searchBarIsOpen);
+    setInputField("");
+    setSearchSolution([]);
+  }
+  return (
+    <WrapHeader>
+      <nav>
+        <NavLinkStyled to="/">
+          <IconBack src="/images/Reiflich_Pfeil.svg"></IconBack>
+        </NavLinkStyled>
+      </nav>
+      <WrapSearchBar>
+        {searchBarIsOpen && (
+          <WrapInputField>
+            <InputField
+              id="inputField"
+              onKeyDown={handleKey}
+              onChange={handleChange}
+              value={inputField}
+              type="search"
+              placeholder="Suche"
+            />
+            {searchSolution && (
+              <WrapSearchHelper hidden={searchSolution.length === 0}>
+                {searchSolution.map((solution) => {
+                  return (
+                    <SearchHelp onClick={handleSearchClick} key={solution.name}>
+                      {solution.name}
+                    </SearchHelp>
+                  );
+                })}
+              </WrapSearchHelper>
+            )}
+          </WrapInputField>
+        )}
+        <Lupe onClick={searchBarOpen} src="/images/Lupe.svg" alt="" />
+      </WrapSearchBar>
+    </WrapHeader>
   );
 }
+const WrapHeader = styled.section`
+  height: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const NavLinkStyled = styled(NavLink)`
+  cursor: pointer;
+`;
+const IconBack = styled.img`
+  width: 5.6rem;
+  margin-left: 1rem;
+  margin-top: 0.7rem;
+`;
+const WrapSearchBar = styled.div`
+  margin-right: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+`;
+const WrapInputField = styled.div`
+  border-radius: 0.3rem;
+  box-shadow: 1px 4px 9px #3cc6c680;
+  position: relative;
+  max-width: 12rem;
+`;
 
 const Lupe = styled.img`
-  display: flex;
-  flex-directon: column;
-  justify-content: auto;
-  margin: -1.8rem 1.5rem 0.8rem auto;
-  margin-bottom: 0.8rem;
   width: 1.1rem;
+  margin-top: 0.5rem;
+  margin-left: 0.45rem;
   cursor: pointer;
-
-  &:hover {
-    fill: red;
-  }
 `;
 
 const InputField = styled.input`
   border-style: none;
   outline: none;
-  width: 12rem;
-  height: 2.5rem;
   border-radius: 0.3rem;
-  box-shadow: 1px 4px 9px #3cc6c680;
+  max-width: 12rem;
+  height: 2.5rem;
   padding: 1rem;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 1.3rem;
   color: #040336;
-  display: flex;
-  flex-directon: column;
-  justify-content: auto;
-  margin: -2.6rem 3.1rem 0.5rem auto;
-  margin-bottom: 0.1rem;
+
   &::placeholder {
+    margin-top: 10rem;
     font-size: 0.8rem;
     color: #c4d1d9;
+  }
+`;
+
+const WrapSearchHelper = styled.div`
+  margin: -0.18rem 0;
+  width: 100%;
+  max-height: 7rem;
+  position: absolute;
+  background-color: white;
+  border-radius: 0 0 0.3rem 0.3rem;
+  box-shadow: 1px 4px 9px #3cc6c680;
+  overflow: auto;
+  padding: 0.25rem;
+  ${(prop) => prop.hidden && "display: none"};
+`;
+const SearchHelp = styled.p`
+  margin: 0.25rem;
+  padding: 0 0.6rem;
+  height: 1rem;
+  font-size: 0.7rem;
+  font-weight: 300;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #040336;
+    border-radius: 0.15rem;
+    opacity: 0.8;
+    color: white;
+    margin: 0.25rem;
+    padding: 0 0.6rem;
+    box-shadow: 0px 3px 6px #c4d1d9;
   }
 `;

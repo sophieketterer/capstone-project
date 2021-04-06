@@ -10,7 +10,7 @@ export default function VeggiesModal({ veggie, isOpen, closeModal }) {
   console.log(veggie);
   return (
     <WrapModal>
-      <Modal isOpen={isOpen} onRequestClose={closeModal}>
+      <Modal style={customStyles} isOpen={isOpen} onRequestClose={closeModal}>
         <CloseButton onClick={closeModal} src="/images/Close.svg"></CloseButton>
         <Picture src={veggie.imageUrl} alt={veggie.name} />
         <MonthGrid>
@@ -71,6 +71,21 @@ export default function VeggiesModal({ veggie, isOpen, closeModal }) {
     </WrapModal>
   );
 }
+
+const customStyles = {
+  content: {
+    top: "1.1rem",
+    bottom: "1.1rem",
+    marginRight: "3%",
+    marginLeft: "-14%",
+    transform: "translate(10%)",
+    overflow: "scroll",
+    border: "none",
+    borderRadius: "0.8rem",
+    boxShadow: "0px 2px 15px #3cc6c680",
+  },
+};
+
 const MonthGrid = styled.section`
   display: grid;
   grid-template-rows: 1fr 1fr;

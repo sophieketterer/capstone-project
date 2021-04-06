@@ -100,7 +100,7 @@ const Button = styled.button`
   font-size: 0.7rem;
   font-weight: semi-bold;
   margin-top: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
   padding: 0;
   cursor: pointer;
 

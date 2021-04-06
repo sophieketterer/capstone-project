@@ -17,7 +17,7 @@ h2 {
   font-weight: 700;
   color: #040336;
   font-size: 3rem;
-  margin-top: 1.3rem;
+  margin-top: 0.5rem;
   margin-bottom: 2rem;
   padding-left: 1.4rem;
   text-align: center;
@@ -27,8 +27,8 @@ h3 {
   color: #040336;
   font-size: 2rem;
   margin-left: 1.125rem; 
-  margin-top: 3.5rem;
-  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.7rem;
   text-align: left;
 }
 img {
