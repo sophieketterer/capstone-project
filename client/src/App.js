@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import styled from "styled-components";
 
 import { veggies } from "./fixtures/AllVeggies.js";
@@ -6,6 +7,12 @@ import { fruities } from "./fixtures/AllFruities.js";
 import { salads } from "./fixtures/AllSalads.js";
 import months from "./fixtures/months.js";
 import PictureCard from "./components/Card.js";
+import VeggiesModal from "./components/VeggiesModal.js";
+import MonthButton from "./components/Button.js";
+import SearchBar from "./components/SearchBar.js";
+import Start from "./pages/Start.js";
+import { ReactComponent as LogoSvg } from "./images/Reiflich.svg";
+
 //import Button from "Button.js";
 
 function App() {
@@ -17,7 +24,19 @@ function App() {
   const [veggiesToRender, setVeggiesToRender] = useState(veggies);
   const [fruitiesToRender, setFruitiesToRender] = useState(fruities);
   const [saladsToRender, setSaladsToRender] = useState(salads);
-  const [month, setMonth] = useState("Gesamtes Jahr");
+  const [month, setMonth] = useState("Alle");
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [veggieToShow, setVeggieToShow] = useState({});
+
+  function showDetails(veggie) {
+    setVeggieToShow(veggie);
+    setModalIsOpen(true);
+  }
+  // Modal open/close
+  function closeModal() {
+    setModalIsOpen(false);
+  }
 
   // Filter Function für Veggies
   function filterVeggies(month) {
@@ -50,7 +69,7 @@ function App() {
     setVeggiesToRender(veggies);
     setFruitiesToRender(fruities);
     setSaladsToRender(salads);
-    setMonth("Gesamtes Jahr");
+    setMonth("Alle");
   }
 
   function filterAll(month) {
@@ -60,56 +79,101 @@ function App() {
   }
 
   return (
-    <div>
-      <main>
-        <h2>{month}</h2>
-        <WrapButton>
-          <Button onClick={() => filterAll(1)}>Jan</Button>
-          <Button onClick={() => filterAll(2)}>Feb</Button>
-          <Button onClick={() => filterAll(3)}>Mär</Button>
-          <Button onClick={() => filterAll(4)}>Apr</Button>
-          <Button onClick={() => filterAll(5)}>Mai</Button>
-          <Button onClick={() => filterAll(6)}>Jun</Button>
-          <Button onClick={() => filterAll(7)}>Jul</Button>
-          <Button onClick={() => filterAll(8)}>Aug</Button>
-          <Button onClick={() => filterAll(9)}>Sep</Button>
-          <Button onClick={() => filterAll(10)}>Okt</Button>
-          <Button onClick={() => filterAll(11)}>Nov</Button>
-          <Button onClick={() => filterAll(12)}>Dez</Button>
-          <Button onClick={resetAllFilters}>Alle</Button>
-        </WrapButton>
-        <h3>Obst</h3>
-        <WrapContainer>
-          {fruitiesToRender.map((fruty, index) => (
-            <PictureCard
-              key={index}
-              imageUrl={fruty.imageUrl}
-              name={fruty.name}
-            />
-          ))}
-        </WrapContainer>
-        <h3>Gemüse</h3>
-        <WrapContainer>
-          {veggiesToRender.map((veggie, index) => (
-            <PictureCard
-              key={index}
-              imageUrl={veggie.imageUrl}
-              name={veggie.name}
-            />
-          ))}
-        </WrapContainer>
-        <h3>Salat</h3>
-        <WrapContainer>
-          {saladsToRender.map((salads, index) => (
-            <PictureCard
-              key={index}
-              imageUrl={salads.imageUrl}
-              name={salads.name}
-            />
-          ))}
-        </WrapContainer>
-      </main>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Start />
+        </Route>
+      </Switch>
+
+      <Switch>
+        <Route path="/all">
+          <div>
+            <main>
+              <SearchBar
+                setVeggiesToRender={setVeggiesToRender}
+                setFruitiesToRender={setFruitiesToRender}
+                setSaladsToRender={setSaladsToRender}
+                veggiesToRender={veggies}
+                fruitiesToRender={fruities}
+                saladsToRender={salads}
+              ></SearchBar>
+
+              <WrapHeader>
+                <IconLeftRight src="/images/Pfeil-left.svg"></IconLeftRight>
+                <h2>{month}</h2>
+                <IconLeftRight src="/images/Pfeil-right.svg"></IconLeftRight>
+              </WrapHeader>
+
+              <MonthButton
+                month={month}
+                filterAll={filterAll}
+                resetAllFilters={resetAllFilters}
+              />
+              {fruitiesToRender.length > 0 && (
+                <WrapCategory>
+                  <ReifTo src="/images/Reiflich_b.svg"></ReifTo>
+                  <h3>Obst</h3>
+                </WrapCategory>
+              )}
+
+              <WrapContainer>
+                {fruitiesToRender.map((fruty, index) => (
+                  <PictureCard
+                    key={index}
+                    imageUrl={fruty.imageUrl}
+                    name={fruty.name}
+                    clickHandler={() => showDetails(fruty)}
+                  />
+                ))}
+              </WrapContainer>
+
+              {veggiesToRender.length > 0 && (
+                <WrapCategory>
+                  <ReifTo src="/images/Reiflich_b.svg"></ReifTo>
+                  <h3>Gemüse</h3>
+                </WrapCategory>
+              )}
+
+              <WrapContainer>
+                {veggiesToRender.map((veggie, index) => (
+                  <PictureCard
+                    key={index}
+                    imageUrl={veggie.imageUrl}
+                    name={veggie.name}
+                    clickHandler={() => showDetails(veggie)}
+                  />
+                ))}
+              </WrapContainer>
+
+              {saladsToRender.length > 0 && (
+                <WrapCategory>
+                  <ReifTo src="/images/Reiflich_b.svg"></ReifTo>
+                  <h3>Salat</h3>
+                </WrapCategory>
+              )}
+
+              <WrapContainer>
+                {saladsToRender.map((salads, index) => (
+                  <PictureCard
+                    key={index}
+                    imageUrl={salads.imageUrl}
+                    name={salads.name}
+                    clickHandler={() => showDetails(salads)}
+                  />
+                ))}
+              </WrapContainer>
+
+              <VeggiesModal
+                isOpen={modalIsOpen}
+                veggie={veggieToShow}
+                closeModal={closeModal}
+              />
+            </main>
+          </div>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
@@ -118,38 +182,31 @@ export default App;
 const WrapContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
+  justify-content: left;
+  cursor: pointer;
 `;
 
-const WrapButton = styled.section`
+const WrapHeader = styled.section`
+  display: flex;
+  justify-content: center;
+  margin: auto;
+`;
+
+const IconLeftRight = styled.img`
+  color: #c4d1d9;
+  width: 1rem;
+  margin-top: -0.9rem;
+`;
+
+const WrapCategory = styled.section`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  margin-top: -1rem;
 `;
 
-const Button = styled.button`
-  text-align: center;
-  height: 3rem;
-  border: none;
-  color: #c4d1d9;
-  background-color: #f2f7fb;
-  font-size: 1rem;
-  font-weight: semi-bold;
+const ReifTo = styled.img`
   margin-top: 2rem;
-  xmargin: 0.5rem;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #040336;
-    color: (255, 255, 255);
-    border-radius: 0.3rem;
-    height: 5rem;
-    box-shadow: 0px 2px 2px (6, 0, 42);
-  }
-  &:active {
-    background-color: #040336;
-    border-radius: 0.3rem;
-    height: 5rem;
-    box-shadow: #040336;
-    transition: ease background-color 250ms;
-  }
+  margin-right: -0.2rem;
+  margin-bottom: 0.7rem;
+  width: 5rem;
 `;
