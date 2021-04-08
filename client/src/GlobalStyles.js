@@ -8,7 +8,7 @@ export default createGlobalStyle`
 body {
   font-family: Assistant;
   display: flex;
-  flex-direction: colomn;
+  flex-direction: column;
   margin: 0rem;
   
   

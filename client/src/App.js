@@ -11,7 +11,6 @@ import VeggiesModal from "./components/VeggiesModal.js";
 import MonthButton from "./components/Button.js";
 import SearchBar from "./components/SearchBar.js";
 import Start from "./pages/Start.js";
-import { ReactComponent as LogoSvg } from "./images/Reiflich.svg";
 
 //import Button from "Button.js";
 
@@ -82,7 +81,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Start />
+          <Start resetAllFilters={resetAllFilters} />
         </Route>
       </Switch>
 
@@ -154,14 +153,15 @@ function App() {
               )}
 
               <WrapContainer>
-                {saladsToRender.map((salads, index) => (
-                  <PictureCard
-                    key={index}
-                    imageUrl={salads.imageUrl}
-                    name={salads.name}
-                    clickHandler={() => showDetails(salads)}
-                  />
-                ))}
+                {saladsToRender &&
+                  saladsToRender.map((salads, index) => (
+                    <PictureCard
+                      key={index}
+                      imageUrl={salads.imageUrl}
+                      name={salads.name}
+                      clickHandler={() => showDetails(salads)}
+                    />
+                  ))}
               </WrapContainer>
 
               <VeggiesModal

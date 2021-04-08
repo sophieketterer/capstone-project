@@ -91,7 +91,7 @@ const MonthGrid = styled.section`
   grid-template-rows: 1fr 1fr;
   grid-template-columns: repeat(12, 1fr);
   justify-items: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 `;
 
 const Dot = styled(DotSvg)`
@@ -131,14 +131,15 @@ const Picture = styled.img`
   align-items: center;
   width: 15.5rem;
   margin: auto;
-  margin-bottom: 1.5rem;
+  margin-top: -1.5rem;
+  margin-bottom: -0.5rem;
 `;
 
 const Head = styled.p`
   text-align: center;
   font-size: 2.5rem;
   font-weight: 600;
-  margin-top: 1.9rem;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
   color: #040336;
 `;

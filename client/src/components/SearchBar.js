@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { ReactComponent as LupeIcon } from "../images/Lupe.svg";
+import { ReactComponent as IconBackIcon } from "../images/Reiflich_Pfeil.svg";
 
 export default function SearchBar({
   veggiesToRender,
@@ -84,7 +86,7 @@ export default function SearchBar({
     <WrapHeader>
       <nav>
         <NavLinkStyled to="/">
-          <IconBack src="/images/Reiflich_Pfeil.svg"></IconBack>
+          <IconBack src={IconBackIcon}></IconBack>
         </NavLinkStyled>
       </nav>
       <WrapSearchBar>
@@ -111,7 +113,10 @@ export default function SearchBar({
             )}
           </WrapInputField>
         )}
-        <Lupe onClick={searchBarOpen} src="/images/Lupe.svg" alt="" />
+        {/* <Lupe  src={LupeIcon} alt="" /> */}
+        <Lupe>
+          <LupeIcon onClick={searchBarOpen} />
+        </Lupe>
       </WrapSearchBar>
     </WrapHeader>
   );
@@ -127,13 +132,14 @@ const WrapHeader = styled.section`
 const NavLinkStyled = styled(NavLink)`
   cursor: pointer;
 `;
-const IconBack = styled.img`
+const IconBack = styled(IconBackIcon)`
   width: 5.6rem;
   margin-left: 1rem;
-  margin-top: 0.7rem;
+  margin-top: 1.2rem;
 `;
 const WrapSearchBar = styled.div`
   margin-right: 1rem;
+  margin-top: 0.25rem;
   display: flex;
   flex-wrap: wrap;
 `;
@@ -144,9 +150,9 @@ const WrapInputField = styled.div`
   max-width: 12rem;
 `;
 
-const Lupe = styled.img`
+const Lupe = styled.span`
   width: 1.1rem;
-  margin-top: 0.5rem;
+  margin-top: 1.1rem;
   margin-left: 0.45rem;
   cursor: pointer;
 `;
@@ -170,7 +176,7 @@ const InputField = styled.input`
 `;
 
 const WrapSearchHelper = styled.div`
-  margin: -0.18rem 0;
+  margin: -0.15rem 0;
   width: 100%;
   max-height: 7rem;
   position: absolute;

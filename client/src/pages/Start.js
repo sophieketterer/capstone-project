@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 import StartBild from "../images/Apfel.jpg";
 
-export default function Start() {
+export default function Start({ resetAllFilters }) {
+  useEffect(() => {
+    resetAllFilters();
+  }, [resetAllFilters]);
+
   return (
     <Main>
       <h1>It's reif</h1>

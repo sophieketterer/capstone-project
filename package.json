@@ -15,5 +15,8 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sophieketterer/capstone-project/issues"
+  },
+  "devDependencies": {
+    "react-styleguidist": "^11.1.6"
   }
 }
