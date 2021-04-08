@@ -18,7 +18,5 @@
     "url": "https://github.com/sophieketterer/capstone-project/issues"
   },
   "devDependencies": {
-    "react-styleguidist": "^11.1.6",
-    "webpack": "^5.31.0"
   }
 }
